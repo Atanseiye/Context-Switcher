@@ -3,6 +3,8 @@ from nltk.tokenize import word_tokenize, sent_tokenize
 import re
 import streamlit as st
 
+nltk.download('punkt')
+
 
 greetings_BoW = [
     'hello',
