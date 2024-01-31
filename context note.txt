@@ -1,0 +1,85 @@
+Adobe analytics profiles 
+1. channel groupings, visits
+2. channel groupings, pageviews
+"metadata": {
+    "_id": "6540f59dc57a310fee66f236",
+    "source": "adobeanalytics",
+    "profile_id": "6lijgqaxow5n9f8br5sbclc51",
+    "dataset_uri": "rmgroyalmailcom",
+    "metrics": [
+      "metrics/visits",
+      "metrics/pageevents",
+      "metrics/revenue"
+    ],
+    "dimensions": [
+      "variables/marketingchannel"
+    ],
+    "date_columns": [
+      "date"
+    ],
+    "date_range": [
+      "2023-10-01",
+      "2023-10-30"
+    ],
+    "time_unit": "D",
+    "dimensions_variables": 
+    [
+      {
+        "dimension": "variables/marketingchannel",
+        "items": [
+          "Direct Traffic",
+          "Organic Search",
+          "Referral Traffic",
+          "Email Marketing (EM)",
+          "Paid Search (SM)",
+          "Internal Traffic",
+          "Door Drops (DL)",
+          "Other",
+          "Organic Social",
+          "Social Media (SB)",
+          "Sponsorship (SS)",
+          "Public Relations (PR)",
+          "Digital Display (DD)",
+          "Direct Mail (DM)",
+          "Affiliate Network (AF)",
+          "None"]
+      }
+    ]
+  }
+
+
+Observe point
+static context
+BOG: <see document>
+
+
+
+Greetings
+
+
+########
+INPUT
+query
+profiles: [profile1, profile2, profile3]
+
+
+########
+OUTPUT
+[
+{"profile1": 3}, {"profile2": 2}, {"profile3": 0}
+]
+
+#######################
+GREETINGS
+context: synthetic & non-sythetic
+Bags of Words for Greetings (context): Hello, hi, assist, help, how, who, what.
+
+query_tokenized: set(['Hello'])
+context_tokenized: set(['Hello', 'hi', 'assist', help', 'how', ...])
+
+matches = count(query_tokenized INTERSECTION context_tokenized)
+
+matches = 1
+
+########################
+ANY ADOBE ANALYTICS PROFILE
